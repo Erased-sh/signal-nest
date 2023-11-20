@@ -1,5 +1,5 @@
 import { WEBFACTORY } from "./parser";
-
-function gain(){
-    const factory=new WEBFACTORY("PE").returnValue()
+//DepInject
+export function gain(){
+    return new WEBFACTORY("TELEGRAM").returnValue().connect()
 }

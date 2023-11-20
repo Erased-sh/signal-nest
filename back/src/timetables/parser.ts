@@ -31,10 +31,6 @@ const CASE_IMPL:Record<UserINPUT,CASE_ACTIONS>={
 }
 
 
-
-
-
-
 abstract class WebParcerAbstract {
     private url: HTTP_PROPS["url"];
     private limit: HTTP_PROPS["limit"];
@@ -52,13 +48,10 @@ abstract class WebParcerAbstract {
 }
 
 export class WEBFACTORY {
-    private readonly HTTP_STAT="200"
     private webstiteType: ORIGIN
-
     constructor(website: UserINPUT) {
        this.webstiteType= CASE_IMPL[website].returnfunc()
     }
-
 
     public returnValue():ORIGIN {
         return this.webstiteType
@@ -68,7 +61,7 @@ export class WEBFACTORY {
 
 class OFFICIAL_web extends WebParcerAbstract {
     connect = () => {
-     //Implement
+     return "web";
     }
     disconnect = () => {
         // Implementation for disconnect method
@@ -77,7 +70,7 @@ class OFFICIAL_web extends WebParcerAbstract {
 
 class TELEGRAM_web extends WebParcerAbstract {
     connect = () => {
-        // Implementation for connect method
+      return "telegram"
     }
     disconnect = () => {
         // Implementation for disconnect method
