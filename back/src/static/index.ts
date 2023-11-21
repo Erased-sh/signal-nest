@@ -3,3 +3,4 @@ export enum MAINPAGE_PHOTOS{
     icon1="icon1",
     icon2="icon2"
 }
+
