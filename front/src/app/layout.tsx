@@ -1,5 +1,5 @@
 import Navbar from "./components/navbar"
-
+import "./styles/global.css"
 export const metadata = {
   title: 'Mtusi sport',
   description: 'In love with sport',
