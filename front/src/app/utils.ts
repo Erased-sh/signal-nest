@@ -1,4 +1,4 @@
-interface IRoutes{
+export interface IRoutes{
     main_page:string,
     about:string,
     teams:string,
