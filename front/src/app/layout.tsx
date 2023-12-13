@@ -1,4 +1,3 @@
-import Navbar from "./components/navbar"
 import "./styles/global.css"
 export const metadata = {
   title: 'Mtusi sport',
@@ -12,7 +11,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   )
 }

@@ -53,6 +53,7 @@
     width: 60%;
     display: grid;
     place-items: center;
+    margin-bottom: 30px;
 }
 
 .sl_container {

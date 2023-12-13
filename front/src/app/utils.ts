@@ -11,7 +11,7 @@ export const current_routes:IRoutes={
     main_page: "/",
     about: "/about",
     teams: "/teams",
-    attandance: "/attandance",
+    attandance: "/attendance",
     photos: "/photos",
     contacts: "/contacts"
 }

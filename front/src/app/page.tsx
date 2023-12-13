@@ -1,8 +1,3 @@
-
-
-
-import Navbar from "./components/navbar";
-import { PhotoSlider } from "./components/slider";
 import NavigationBar from "./components/layout/navigation_bar"
 import FooterBar from "./components/layout/footer_bar";
 import HomeSwiper from "./components/sliders/home_slider";
@@ -41,7 +36,7 @@ export default function Home() {
       </div>
       
 
-      <div className={style.text_holder}>
+      <div style={{marginBottom: 70}} className={style.text_holder}>
         <div className={style.col1}></div>
           <div className={style.text_container}>
               <h3 className={style.title}>
@@ -63,8 +58,6 @@ export default function Home() {
     <div className={style.footer}>
     <FooterBar></FooterBar>
     </div>
-
    </div>
-
   )
 }
