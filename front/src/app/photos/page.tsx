@@ -2,7 +2,7 @@ import style from "../page.module.css"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
 import PhotoGrid from "../components/photogrid/photo_grid"
-
+import HomeSlider from "../components/sliders/home_slider"
 export default function PhotosPage() {
     const photos_example = [1,2,3,4]
     return (
@@ -20,6 +20,16 @@ export default function PhotosPage() {
                     </div>
                     <div className={style.col1}></div>
                 </div>
+
+                <div className={style.text_holder}>
+                    <div className={style.col1}></div>
+                    <div className={style.text_container}>
+                        <HomeSlider></HomeSlider>
+                    </div>
+                    <div className={style.col1}></div>
+                </div>
+                
+                
                 {photos_example.map(photo => 
                 <div className={style.text_holder}>
                     <div className={style.col2}></div>
