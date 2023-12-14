@@ -1,0 +1,74 @@
+.body_container {
+    background: #F0EFFD;
+}
+
+.main {
+    display: inline-block;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% высоты видимой области экрана */
+    margin: 0;
+}
+
+.main {
+    flex: 1; /* Занимает все доступное пространство между header и footer */
+    background: #F0EFFD;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.title {
+    margin-top: 20px;
+    color: #000;
+    /* Title 1 */
+    font-family: Nunito;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.article {
+    margin-top: 20px;
+    color: #000;
+    /* Text */
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    word-wrap: break-word;
+}
+
+.text_container {
+    width: 60%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 30px;
+}
+
+.sl_container {
+    display: block;
+
+}
+.text_holder {
+    display: flex;
+}
+
+.col1 {
+    width: 20%;
+}
+
+/* FOR PHOTO GRID */
+.col2 {
+ width: 5%;
+}

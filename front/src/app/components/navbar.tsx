@@ -2,30 +2,39 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
+import { TypographyDef } from './fields';
+import {  Stack } from '@mui/material';
+import { current_routes } from '../utils';
+
 
 export default function Navbar() {
+
+  const routes=current_routes
   return (
-    <Box sx={{ flexGrow: 0 }}>
-      <AppBar position="sticky">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
+    <Box >
+      <AppBar position="absolute">
+        <Toolbar sx={{background:"black"}}>
+
+  <Stack
+  direction="row"
+  spacing={25}
+  alignItems={"center"}
+>
+          <TypographyDef value={routes.main_page} link={"/"}  ></TypographyDef>
+          <TypographyDef value={routes.about} link={"/wad"}></TypographyDef>
+          <TypographyDef value={routes.teams}link={"/rsf"}></TypographyDef>
+          <TypographyDef value={routes.attandance} link={"/sef"}></TypographyDef>
+          <TypographyDef value={routes.photos}link={"/sef"}></TypographyDef>
+          <TypographyDef value={routes.contacts}link={"/esfs"}></TypographyDef>
+
+          <IconButton size="medium" color="inherit">
+          <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit"><AccountCircleIcon/></Button>
+    
+       </Stack>
+
         </Toolbar>
       </AppBar>
     </Box>
