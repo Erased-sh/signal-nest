@@ -1,0 +1,22 @@
+.layout {
+    width: 100%;
+  
+    display: flex;
+    gap: 16px;
+  }
+  
+.grow1 { flex-grow: 1; }
+
+
+.img {
+  border-radius: 8px;
+}
+
+
+.img_container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 30px;
+
+}
