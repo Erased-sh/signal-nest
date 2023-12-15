@@ -1,0 +1,42 @@
+.name {
+    color: #000;
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.more{
+    color: #000;
+    font-family: Nunito;
+    font-size: 13.76px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.card {
+    border-radius: 15px;
+    background: #DEDBFF;
+}
+
+.img {
+    border-radius: 15px 15px 0 0;
+}
+
+.spacer{
+    min-width: 50px;
+}
+
+.col {
+    width: 25%;
+}
+.hol {
+    margin-top: 10px;
+}
