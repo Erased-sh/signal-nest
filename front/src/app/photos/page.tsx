@@ -1,7 +1,21 @@
+
+const [imageUrls, setImageUrls] = useState([""]);
+const fetchPhotos = async () => {
+    try {
+      const urls = await getPhotosDrive();
+      return urls
+    } catch (error) {
+      console.error('Error fetching photos:', error);
+    }
+  };
+
+
 import style from "../page.module.css"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
 import PhotoGrid from "../components/photogrid/photo_grid"
+import { getPhotosDrive } from "../fetching/photo_drive";
+import { useState } from "react";
 
 export default function PhotosPage() {
     const photos_example = [1,2,3,4]
@@ -40,6 +54,7 @@ export default function PhotosPage() {
             <div className={style.footer}>
                 <FooterBar></FooterBar>
             </div>
+            
         </div>
     )
 }

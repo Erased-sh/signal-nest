@@ -1,6 +1,12 @@
+
+
+
+
 import scoped from "./page.module.css"
 import style from "../../page.module.css"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+import { getPhotosDrive } from "@/app/fetching/photo_drive"
 
 
 interface GridProps {
@@ -8,6 +14,9 @@ interface GridProps {
 }
 
 export default function PhotoGrid({ source1, source2, source3, source4} : GridProps) {
+  
+    
+   
     return (
         <div className={scoped.layout}>
                     <div className={scoped.grow1}>
@@ -55,6 +64,8 @@ export default function PhotoGrid({ source1, source2, source3, source4} : GridPr
                             {/* <div className={style.col1}></div> */}
                         </div>
                     </div>
+
+              
                     <div className={scoped.grow1}>
                         <div className={style.text_holder}>
                             {/* <div className={style.col1}></div> */}
