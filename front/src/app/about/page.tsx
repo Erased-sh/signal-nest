@@ -1,5 +1,7 @@
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
+import SSlider from "../components/sliders/sections_slider/sections_slider"
+import TSlider from "../components/sliders/teams_slider/teams_slider"
 import style from "../page.module.css"
 
 export default function AboutPage() {
@@ -18,9 +20,16 @@ export default function AboutPage() {
                 </div>
                 <div className={style.col1}></div>
             </div>
-            {/* 
-            SLIDER 
-             */}
+            
+            <div className={style.text_holder}>
+                    <div className={style.col1}></div>
+                    <div className={style.text_container}>
+                        <SSlider></SSlider>
+                    </div>
+                    <div className={style.col1}></div>
+            </div>
+
+
             <div className={style.text_holder}>
                 <div className={style.col1}></div>
                     <div className={style.text_container}>
@@ -30,9 +39,13 @@ export default function AboutPage() {
                     </div>
                 <div className={style.col1}></div>
             </div>
-            {/* 
-            SLIDER 
-             */}
+            <div className={style.text_holder}>
+                    <div className={style.col1}></div>
+                    <div className={style.text_container}>
+                        <TSlider></TSlider>
+                    </div>
+                    <div className={style.col1}></div>
+            </div>
             <div style={{marginBottom: 70}} className={style.text_holder}>
                 <div className={style.col1}></div>
                     <div className={style.text_container}>

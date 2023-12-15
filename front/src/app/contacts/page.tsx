@@ -1,4 +1,4 @@
-import HomeSwiper from "../components/sliders/home_slider"
+import HomeSwiper from "../components/sliders/exhibition_slider/exhibition_slider"
 import NavigationBar from "../components/layout/navigation_bar"
 import Image from 'next/image';
 import FooterBar from "../components/layout/footer_bar"
