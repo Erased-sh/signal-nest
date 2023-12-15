@@ -18,7 +18,7 @@ import { getPhotosDrive } from "../fetching/photo_drive";
 import { useState } from "react";
 
 export default function PhotosPage() {
-    const photos_example = [1,2,3,4]
+    const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
@@ -45,14 +45,13 @@ export default function PhotosPage() {
                 
                 
                 {photos_example.map(photo => 
-                <div key={photo} className={style.text_holder}>
+                <div key={photo[0]} className={style.text_holder}>
                     <div className={style.col2}></div>
-
                         <PhotoGrid
-                        source1="/map.jpg"
-                        source2="/map.jpg"
-                        source3="/map.jpg"
-                        source4="/map.jpg"
+                        source1={`/photos/${photo[0]}.jpg`}
+                        source2={`/photos/${photo[1]}.jpg`}
+                        source3={`/photos/${photo[2]}.jpg`}
+                        source4={`/photos/${photo[3]}.jpg`}
                         >
                         </PhotoGrid>
 

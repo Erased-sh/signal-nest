@@ -1,6 +1,7 @@
+// 'use client'
 import NavigationBar from "./components/layout/navigation_bar"
 import FooterBar from "./components/layout/footer_bar";
-import HSlider from "./components/sliders/exhibition_slider/exhibition_slider";
+import HSlider from "./components/sliders/home_slider/home_slider";
 import style from "./page.module.css"
 
 export default function Home() {

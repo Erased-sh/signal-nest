@@ -12,11 +12,18 @@ swiper {
       
     }
   
-    swiper-slide {
+    /* swiper-slide {
       background-position: center;
       background-size: cover;
       width: 500px;
       height: 500px;
+    } */
+
+      swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 320px;
+      height: 320px;
     }
     /* swiper-slide {
       text-align: center;

@@ -1,7 +1,7 @@
 import Script from "next/script"
 import "./slider.css"
 import SectionCard from "../../cards/sections_card/section_card"
-export default function SSlider() {
+export default function TSlider() {
     return (
         <>
         <swiper-container 
@@ -14,67 +14,67 @@ export default function SSlider() {
 
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Баскетбол"
-                img="/home_1.jpg"
+                name="Футбол(ж)"
+                img="/teams/team_3.jpg"
                 >
 
                 </SectionCard>
             </swiper-slide>
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Дартс"
-                img="/home_2.jpg"
+                name="Баскетбол(м)"
+                img="/teams/team_2.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
             <swiper-slide>
                 <SectionCard
-                name="Теннис"
-                img="/home_4.jpg"
+                name="Волейбол"
+                img="/teams/team_1.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Баскетбол"
-                img="/home_1.jpg"
+                name="Футбол(ж)"
+                img="/teams/team_3.jpg"
                 >
 
                 </SectionCard>
             </swiper-slide>
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Дартс"
-                img="/home_2.jpg"
+                name="Баскетбол(м)"
+                img="/teams/team_2.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
             <swiper-slide>
                 <SectionCard
-                name="Теннис"
-                img="/home_4.jpg"
+                name="Волейбол"
+                img="/teams/team_1.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Баскетбол"
-                img="/home_1.jpg"
+                name="Футбол(ж)"
+                img="/teams/team_3.jpg"
                 >
 
                 </SectionCard>
             </swiper-slide>
             <swiper-slide className="sslide">
                 <SectionCard
-                name="Дартс"
-                img="/home_2.jpg"
+                name="Баскетбол(м)"
+                img="/teams/team_2.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
             <swiper-slide>
                 <SectionCard
-                name="Теннис"
-                img="/home_4.jpg"
+                name="Волейбол"
+                img="/teams/team_1.jpg"
                 >
                 </SectionCard>
             </swiper-slide>
