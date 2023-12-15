@@ -38,14 +38,14 @@ export default function PhotosPage() {
                 <div className={style.text_holder}>
                     <div className={style.col1}></div>
                     <div className={style.text_container}>
-                        <HomeSlider></HomeSlider>
+                        <ESlider></ESlider>
                     </div>
                     <div className={style.col1}></div>
                 </div>
                 
                 
                 {photos_example.map(photo => 
-                <div className={style.text_holder}>
+                <div key={photo} className={style.text_holder}>
                     <div className={style.col2}></div>
 
                         <PhotoGrid

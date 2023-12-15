@@ -1,6 +1,6 @@
 import NavigationBar from "./components/layout/navigation_bar"
 import FooterBar from "./components/layout/footer_bar";
-import HomeSwiper from "./components/sliders/home_slider";
+import HSlider from "./components/sliders/exhibition_slider/exhibition_slider";
 import style from "./page.module.css"
 
 export default function Home() {
@@ -27,11 +27,10 @@ export default function Home() {
       <div className={style.text_holder}>
         <div className={style.col1}></div>
           <div className={style.text_container}>
-              <h3 className={style.title}>Новости</h3>
+              <h3 style={{marginBottom: 50}} className={style.title}>Новости</h3>
+              <HSlider></HSlider>
           </div>
-          {/* <div className={style.sl_container}>
-          <HomeSwiper></HomeSwiper>
-          </div> */}
+          
         <div className={style.col1}></div>
       </div>
       
