@@ -1,7 +1,7 @@
 import { google } from 'googleapis';
 
 export const getPhotosDrive = async () => {
-  const keyFilePath = '/path/to/your/credentials.json';
+  const keyFilePath = 'front/noble-beanbag-408304-849a2d948148.json';
   const keys = require(keyFilePath);
 
   const auth = new google.auth.GoogleAuth({
@@ -14,32 +14,28 @@ export const getPhotosDrive = async () => {
 
   const drive = google.drive({ version: 'v3', auth });
 
-  try {
-    const res = await drive.files.list({
-      q: "'Folder' in parents", // Заменить 'Folder' на нашу папку
-    });
 
-    const files = res?.data.files;
+    const res = await drive.files.list({
+      q: "'root' in parents and name='photos' and mimeType='image/jpeg'"
+    });
+    
+
+    const files = res.data.files;
     if (files?.length) {
       const urls = await Promise.all(files.map(async (file) => {
-        try {
+      
           const fileInfo = await drive.files.get({
             fileId: file.id || '',
             fields: 'webContentLink',
           });
+          console.error(fileInfo.data.webContentLink)
           return fileInfo.data.webContentLink || '';
-        } catch (error) {
-          console.error('Error fetching file info:', error);
-          return '';
-        }
+        
       }));
       return urls.filter(url => url !== '');
     } else {
       console.log('No files found.');
       return [];
     }
-  } catch (error) {
-    console.error('Error fetching files:', error);
-    return [];
-  }
+  
 };

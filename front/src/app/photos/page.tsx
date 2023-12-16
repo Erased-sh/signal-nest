@@ -1,11 +1,17 @@
 
-const [imageUrls, setImageUrls] = useState([""]);
-const fetchPhotos = async () => {
+export async function generateStaticParams(){
     try {
-      const urls = await getPhotosDrive();
-      return urls
+      const urls:string[]= await getPhotosDrive();
+      console.log(urls)
+      return {props:
+        {urls}
+    }
     } catch (error) {
+      const urls:string[]=[""]
       console.error('Error fetching photos:', error);
+      return {props:
+        {urls}
+    }
     }
   };
 
@@ -15,13 +21,24 @@ import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
 import PhotoGrid from "../components/photogrid/photo_grid"
 import { getPhotosDrive } from "../fetching/photo_drive";
-import { useState } from "react";
+interface pr{
+    urls:string[]
+}
 
-export default function PhotosPage() {
+export default async function PhotosPage({urls}:pr){
+    
     const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
+
+            {
+
+                urls?.map((photo)=>{
+                    return <img src={photo} alt={photo}/>
+                })
+                
+            }
 
             <div className={style.main}>
 
@@ -32,13 +49,14 @@ export default function PhotosPage() {
                             Галерея
                         </h3>
                     </div>
+                    
                     <div className={style.col1}></div>
                 </div>
 
                 <div className={style.text_holder}>
                     <div className={style.col1}></div>
                     <div className={style.text_container}>
-                        <ESlider></ESlider>
+                        {/* <ESlider></ESlider> */}
                     </div>
                     <div className={style.col1}></div>
                 </div>
@@ -54,6 +72,7 @@ export default function PhotosPage() {
                         source4={`/photos/${photo[3]}.jpg`}
                         >
                         </PhotoGrid>
+                        <img src="https://drive.google.com/file/d/1PXz227-kJS0KXXI_H38WLRxWeYqdZdN5/view?usp=share_link"/>
 
                     <div className={style.col2}></div>
                 </div>
