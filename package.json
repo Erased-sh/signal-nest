@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "yandex-disk": "^0.0.8"
   }
 }
