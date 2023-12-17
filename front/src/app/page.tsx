@@ -43,10 +43,10 @@ export default function Home() {
                 Расписание
               </h3>
               <h3 className={style.article}>
-              Расписание сборных и секций: https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit
+              Расписание сборных и секций: <a href="https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit">https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit</a>
               </h3>
               <h3 className={style.article}>
-              Расписание пар по физ.культуре:     https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit
+              Расписание пар по физ.культуре: <a href="https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit">https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit</a>
               </h3>
           </div>
           
