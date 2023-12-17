@@ -23,25 +23,20 @@ export default function PhotoGrid({photos} : GridProps) {
                         <div className={style.text_holder}>
                             
 
-                            {photosPrev.map((photo)=>{
-return  <div className={scoped.img_container}>
-<img
-className={scoped.img}
-src={photo}
-alt="bla bla bla"
-width={300}
-height={250}
-></img>
-</div>
-                            }
-                                        
-                 
-
-              
-                  )
-}
-</div>
-</div>
-</div>)}
+                            {photosPrev.map((photo)=>
+                                <div className={scoped.img_container}>
+                                <img
+                                className={scoped.img}
+                                src={photo}
+                                alt="bla bla bla"
+                                width={300}
+                                height={250}
+                                ></img>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+        </div>
+)}
  
     

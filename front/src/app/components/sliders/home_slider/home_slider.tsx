@@ -11,6 +11,7 @@ interface sliderProps{
     fields:UsersRowData[]
 }
 export const HSlider:FC<sliderProps>=({fields})=> {
+    
     return (
         <>
         <swiper-container 

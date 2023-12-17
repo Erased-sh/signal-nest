@@ -35,29 +35,36 @@ const fetchData = async () => {
 };
 
 
+const splitUrls = (urls: string[]) => {
+    let index = 0;
+    let result: string[][] = [];
+    while (index + 4 < urls.length) {
+        result.push(urls.slice(index, index + 4));
+        index += 4
+    }
+    return result;
+}
+
+
 
 import style from "../page.module.css"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
 import PhotoGrid from "../components/photogrid/photo_grid"
+import ESlider from "../components/sliders/exhibition_slider/exhibition_slider"
 
 
 
 export default async function PhotosPage(){
     
-    const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
+    // const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
     const fetch=await fetchData()||[""]
+    const photos = splitUrls(fetch);
 
    
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
-
-
-         
-                
-            
-
             <div className={style.main}>
 
                 <div className={style.text_holder}>
@@ -74,22 +81,19 @@ export default async function PhotosPage(){
                 <div className={style.text_holder}>
                     <div className={style.col1}></div>
                     <div className={style.text_container}>
-                        {/* <ESlider></ESlider> */}
+                        <ESlider urls={fetch}></ESlider>
                     </div>
                     <div className={style.col1}></div>
                 </div>
                 
                 
-                {photos_example.map(photo => 
+                {photos.map(photo => 
                 <div key={photo[0]} className={style.text_holder}>
                     <div className={style.col2}></div>
                         <PhotoGrid
-                        photos={fetch}
+                        photos={photo}
                         >
-                        </PhotoGrid>
-                        
-
-                    
+                        </PhotoGrid>                    
                     <div className={style.col2}></div>
                 </div>
                 )}

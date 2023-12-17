@@ -1,8 +1,6 @@
-
-
 const teamsReciever=async ()=>{
     const data=await getTeamsDataFromGoogleSheet("1eiHH0fZlKYdgi3DXmal0LcF-25Zp7S4zpzjo7rsy2YM");
-    console.log(data)
+    // console.log(data)
     return data
   }
 
@@ -30,7 +28,7 @@ export default async function ContactsPage(){
                     <div className={style.col1}></div>
                 </div>
 
-                <p>Баскетбол</p>
+                {/* <p>Баскетбол</p> */}
             
             {/* <div className={style.text_holder}>
                 <div className={style.col1}></div>
