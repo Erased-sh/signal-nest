@@ -8,14 +8,15 @@ const newsReciever=async ()=>{
 
 import NavigationBar from "./components/layout/navigation_bar"
 import FooterBar from "./components/layout/footer_bar";
-import HSlider from "./components/sliders/home_slider/home_slider";
+import {HSlider} from "./components/sliders/home_slider/home_slider";
 import style from "./page.module.css"
-import { getDataFromGoogleSheet } from "./fetching/news";
+import { UsersRowData, getDataFromGoogleSheet } from "./fetching/news";
 
 
 
 export default async function Home() {
-  const news=await newsReciever()
+  const news:UsersRowData[]= await Promise.all(await newsReciever())
+  
   return (
    <div className={style.body}>
     <NavigationBar></NavigationBar>
@@ -40,10 +41,10 @@ export default async function Home() {
         <div className={style.col1}></div>
           <div className={style.text_container}>
               <h3 style={{marginBottom: 50}} className={style.title}>Новости</h3>
-              <HSlider></HSlider>
+              <HSlider fields={news}></HSlider>
           </div>
-          {<div>{news[0].description}</div>}
           
+      
         <div className={style.col1}></div>
       </div>
       
@@ -58,7 +59,7 @@ export default async function Home() {
               Расписание сборных и секций: https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit
               </h3>
               <h3 className={style.article}>
-              Расписание пар по физ.культуре:     https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit
+              Расписание пар по физ.культуре: https://docs.google.com/document/d/1cL227htjs0HJ5itZZjCAwkHIoJOp8TLm/edit
               </h3>
           </div>
           

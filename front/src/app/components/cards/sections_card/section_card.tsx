@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import style from "../../../page.module.css"
 import scoped from "./card.module.css"
+import { Button } from "@mui/material"
 
 interface SectionProps {
     name: string,
@@ -23,7 +26,7 @@ export default function SectionCard({name, img}: SectionProps) {
             <div className={style.col1}></div>
             <h3 className={scoped.name}>{name}</h3>
             <div className={scoped.col}></div>
-            <h3 className={scoped.more}>Узнать больше{'>'}</h3>
+            <Button className={scoped.more} onClick={()=>{alert(name)}}>Узнать больше</Button>
             <div className={style.col1}></div>
         </div>
         </div>

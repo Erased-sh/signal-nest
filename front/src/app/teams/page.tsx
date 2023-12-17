@@ -1,12 +1,20 @@
-'use client'
+
+
+const teamsReciever=async ()=>{
+    const data=await getTeamsDataFromGoogleSheet("1eiHH0fZlKYdgi3DXmal0LcF-25Zp7S4zpzjo7rsy2YM");
+    console.log(data)
+    return data
+  }
+
 import style from "../page.module.css"
 import ColorTabs from "../components/tabs/tab"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
-import Grid from "../components/grid/grid"
+import {Grid} from "../components/grid/grid"
+import { getTeamsDataFromGoogleSheet } from "../fetching/teams";
 
-export default function ContactsPage(){
-    const example = [1,2]
+export default async function ContactsPage(){
+    const teams=await teamsReciever()
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
@@ -21,21 +29,20 @@ export default function ContactsPage(){
                     </div>
                     <div className={style.col1}></div>
                 </div>
+
+                <p>Баскетбол</p>
             
-            <div className={style.text_holder}>
+            {/* <div className={style.text_holder}>
                 <div className={style.col1}></div>
                 <ColorTabs></ColorTabs>
                 <div className={style.col1}></div>
-            </div>
+            </div>  */}
 
-            {example.map(el => 
+           
                 <Grid
-                source1="/players/1.jpg"
-                source2="/players/1.jpg"
-                source3="/players/1.jpg"
-                source4="/players/1.jpg"
+                fields={teams}
                 ></Grid>
-            )}
+            
             </div>
             
             <div className={style.footer}>

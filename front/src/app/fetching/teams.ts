@@ -1,16 +1,11 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 import * as secret from "../../../durable-cycle-408401-e343cb4938f2.json";
+import { GridingProps } from '../components/grid/grid';
 
-export type UsersRowData = {
-  date: string;
-  title: string;
-  description: string;
-  img:string | undefined
- 
-};
 
-export async function getDataFromGoogleSheet(table_id: string) {
+
+export async function getTeamsDataFromGoogleSheet(table_id: string) {
   const serviceAccountAuth = new JWT({
     email: secret.client_email,
     key: secret.private_key,
@@ -22,16 +17,17 @@ export async function getDataFromGoogleSheet(table_id: string) {
   
   const sheet = doc.sheetsByIndex[0];
   const userRows = await sheet.getRows();
-  await doc.loadCells("A1:E10")
+  await doc.loadCells("A1:F40")
 
   const dataPromises = userRows.map(async (row) => {
-    const cell=await sheet.getCellByA1("D"+row.rowNumber)
-    const new_row: UsersRowData = {
-      date: row.get("date"),
-      title: row.get("title"),
-      description: row.get("description"),
-      img:cell.hyperlink
-    
+    const cell=await sheet.getCellByA1("F"+row.rowNumber)
+    const new_row: GridingProps= {
+        img: cell.hyperlink||"",
+        name: row.get("name"),
+        birthday: row.get("birthday"),
+        placeofbirthday: row.get("placeofbirthday"),
+        faculty: row.get("faculty"),
+        year: row.get("year")
     };
     return new_row;
   });

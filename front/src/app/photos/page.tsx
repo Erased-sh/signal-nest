@@ -20,7 +20,9 @@ const fetchData = async () => {
     const keys=Object.keys(response.data.items)
 
     const data:string[]=keys.map((key)=>{
-       return response.data.items[key].file
+       const data=response.data.items[key]
+       console.log(data.path)
+       return data.path.split("/").length<=2?data.file:""
     })
     console.log(data)
    
@@ -45,6 +47,8 @@ export default async function PhotosPage(){
     
     const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
     const fetch=await fetchData()||[""]
+
+   
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
@@ -80,17 +84,12 @@ export default async function PhotosPage(){
                 <div key={photo[0]} className={style.text_holder}>
                     <div className={style.col2}></div>
                         <PhotoGrid
-                        source1={`/photos/${photo[0]}.jpg`}
-                        source2={`/photos/${photo[1]}.jpg`}
-                        source3={`/photos/${photo[2]}.jpg`}
-                        source4={`/photos/${photo[3]}.jpg`}
+                        photos={fetch}
                         >
                         </PhotoGrid>
                         
 
-                        {fetch.map((file)=>{
-            return <img height="100" width="100" src={file} alt="nor"></img>
-            })}
+                    
                     <div className={style.col2}></div>
                 </div>
                 )}
