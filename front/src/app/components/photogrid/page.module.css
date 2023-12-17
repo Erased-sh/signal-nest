@@ -7,7 +7,7 @@
   
 .grow1 { flex-grow: 1; }
 
-
+/* 
 .img {
   border-radius: 15px;
 }
@@ -21,4 +21,25 @@
     margin-left: 10px;
     margin-right: 10px;
 
+} */
+
+
+/* Стили для контейнера фотографий */
+.img_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Стили для контейнера каждой отдельной фотографии */
+.img_container {
+  width: calc(25% - 10px); /* Чтобы поместить по 4 на строку с учетом отступов и ширины */
+  margin-bottom: 10px; /* Отступ между строками */
+  box-sizing: border-box;
+}
+
+.img_container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

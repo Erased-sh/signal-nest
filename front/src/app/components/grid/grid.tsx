@@ -13,27 +13,33 @@ export interface GridingProps {
     year:string
 }
 
+
 interface GridArray{
+    title:string,
     fields:GridingProps[]
 }
 
-export const Grid:FC<GridArray>=(fields)=>{
-    const srcs = fields.fields
+
+
+export const Grid:FC<GridArray>=({title, fields})=>{
+    const srcs = fields
     return (
         <div className={scoped.layout}>
             {srcs.map((src) =>
-                <div className={scoped.grow1}>
+                <div key={src.img} className={scoped.grow1}>
+                    <h1>{title}</h1>
                     <div className={style.text_holder}>
+
                         <div className={style.col1}></div>
                             <div className={style.text_container}>
                                 <div className={scoped.img_container}>
-                                    <Image
+                                    <img
                                     className={scoped.img}
                                     src={src.img}
                                     alt="bla bla bla"
                                     width={300}
                                     height={250}
-                                    ></Image>
+                                    ></img>
                                 </div>
                                 <h3 className={style.title}>
                                    {src.name}

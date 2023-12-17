@@ -1,6 +1,7 @@
 import style from "../page.module.css"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
+import Link from "next/link"
 
 export default function AttandancePage() {
     return (
@@ -15,10 +16,10 @@ export default function AttandancePage() {
                                 Посещаемость
                             </h3>
                             <h3 className={style.article}>
-                                Свою посещаемость вы можете увидеть в таблице по ссылке ниже, во вкладке своей группы; 
+                                Свою посещаемость вы можете увидеть в таблице по ссылке ниже, во вкладке своей группы
                                 <br />
                                 <br />
-                                https://docs/spreadsheets/d/1c5R17gpz63536I2SEr2Jo9Viybvy99MaS8-YgwU0KtazrO8/edit#gid=1545700022
+                                <Link href="https://docs.google.com/spreadsheets/d/121P-Tr7feHAfkhX4Bq0KJMuiHFgZ5fCz8w71hMKJ9hg/edit#gid=0">Моя посещаемость</Link>
                             </h3>
                     </div>
                     <div className={style.col1}></div>

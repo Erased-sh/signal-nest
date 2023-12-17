@@ -4,9 +4,7 @@
 
 import scoped from "./page.module.css"
 import style from "../../page.module.css"
-import Image from "next/image"
-import { useEffect, useState } from "react"
-import { getPhotosDrive } from "@/app/fetching/photo_drive"
+
 
 
 interface GridProps {

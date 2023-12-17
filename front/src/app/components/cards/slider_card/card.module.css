@@ -22,11 +22,15 @@
 
 .card {
     border-radius: 15px;
+    position: absolute;
     background: #DEDBFF;
 }
 
 .img {
+    width: 200;
+    height: 200;
     border-radius: 15px 15px 0 0;
+    
 }
 
 .spacer{

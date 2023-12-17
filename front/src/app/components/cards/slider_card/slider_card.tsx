@@ -13,9 +13,7 @@ export default function SliderCard({name, date, img, views}: ImageProps) {
     <div className={scoped.card}>
         <img 
         src={img}
-        alt={date}
-        width={300}
-        height={190}
+        alt={date}    
         >
         </img>
         <div className={style.text_holder}>
@@ -33,9 +31,6 @@ export default function SliderCard({name, date, img, views}: ImageProps) {
                 {date}
             </h3>
             <div className={scoped.spacer}></div>
-            <h3 className={scoped.views}>
-                {views}
-            </h3>
         </div>
     </div>
     )
