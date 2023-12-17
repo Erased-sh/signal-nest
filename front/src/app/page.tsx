@@ -1,10 +1,21 @@
-// 'use client'
+
+
+const newsReciever=async ()=>{
+  const data=await getDataFromGoogleSheet("1_QbMUJ6qPyOQfhgVEQQG14XkIhAZL1IBlTFFuhESHaQ");
+  console.log(data)
+  return data
+}
+
 import NavigationBar from "./components/layout/navigation_bar"
 import FooterBar from "./components/layout/footer_bar";
 import HSlider from "./components/sliders/home_slider/home_slider";
 import style from "./page.module.css"
+import { getDataFromGoogleSheet } from "./fetching/news";
 
-export default function Home() {
+
+
+export default async function Home() {
+  const news=await newsReciever()
   return (
    <div className={style.body}>
     <NavigationBar></NavigationBar>
@@ -31,6 +42,7 @@ export default function Home() {
               <h3 style={{marginBottom: 50}} className={style.title}>Новости</h3>
               <HSlider></HSlider>
           </div>
+          {<div>{news[0].description}</div>}
           
         <div className={style.col1}></div>
       </div>
