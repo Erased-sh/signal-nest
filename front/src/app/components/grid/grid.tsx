@@ -27,7 +27,7 @@ export const Grid:FC<GridArray>=({title, fields})=>{
         <div className={scoped.layout}>
             {srcs.map((src) =>
                 <div key={src.img} className={scoped.grow1}>
-                    <h1>{title}</h1>
+                    {/* <h1>{title}</h1> */}
                     <div className={style.text_holder}>
 
                         <div className={style.col1}></div>

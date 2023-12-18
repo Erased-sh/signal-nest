@@ -39,7 +39,7 @@ const splitUrls = (urls: string[]) => {
     let index = 0;
     let result: string[][] = [];
     while (index + 4 < urls.length) {
-        result.push(urls.slice(index, index + 4));
+        result.unshift(urls.slice(index, index + 4));
         index += 4
     }
     return result;

@@ -21,7 +21,7 @@ swiper-container {
     background-position: center;
     background-size: cover;
     width: 320px;
-    height: 260px;
+    height: 300px;
   }
   swiper-slide img {
     display: block;
