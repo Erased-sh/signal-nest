@@ -13,7 +13,7 @@ export default function SSlider() {
         >
 
             <swiper-slide className="sslide">
-                <SectionCard
+                <SectionCard 
                 name="Баскетбол"
                 img="/home_1.jpg"
                 >

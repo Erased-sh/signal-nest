@@ -1,8 +1,15 @@
 import Script from "next/script"
 import Image from "next/image"
 import "./slider.css"
-export default function ESwiper() {
-  const photos_example = [1,2,3,4,5,6,7,8,9,10,10 ]
+
+
+
+interface EsliderData {
+  urls: string[];
+}
+export default function ESwiper({urls}: EsliderData) {
+  const photos_example = ["1",2,3,4,5,6,7,8,9,10,10 ]
+
     return (
     <div>
         <swiper-container 
@@ -17,9 +24,16 @@ export default function ESwiper() {
         coverflow-effect-slide-shadows={true}
         loop={true}
         >
-          {photos_example.map(photo => 
+
+          {urls.filter(el => el != "").map(photo => 
             <swiper-slide>
-              <Image src={`/photos/${photo}.jpg`} alt="" width={320} height={320}></Image>
+              {/* <Image src={`/photos/${photo}.jpg`} alt="" width={320} height={320}></Image> */}
+              <img
+                                src={photo}
+                                alt="bla bla bla"
+                                width={300}
+                                height={250}
+              ></img>
             </swiper-slide>
             )}
         </swiper-container>

@@ -11,15 +11,11 @@ interface ImageProps {
 export default function SliderCard({name, date, img, views}: ImageProps) {
     return (
     <div className={scoped.card}>
-        <Image 
-        className={scoped.img}
+        <img className={scoped.img}
         src={img}
-        alt=""
-        width={300}
-        height={190}
-        objectFit='contain'
+        alt={date}    
         >
-        </Image>
+        </img>
         <div className={style.text_holder}>
             <div className={style.col1}></div>
             <div className={style.text_container}>
@@ -35,9 +31,6 @@ export default function SliderCard({name, date, img, views}: ImageProps) {
                 {date}
             </h3>
             <div className={scoped.spacer}></div>
-            <h3 className={scoped.views}>
-                {views}
-            </h3>
         </div>
     </div>
     )

@@ -1,14 +1,66 @@
+
+import axios from 'axios';
+
+const token = "y0_AgAAAABy2V8BAAsAZAAAAAD1A5NVkdB2Wbr0R1iwF7Uxrn-VPbP0H8U";
+interface Prew{
+   
+    preview:string
+   
+}
+const fetchData = async () => {
+  try {
+    const response = await axios.get('https://cloud-api.yandex.net/v1/disk/resources/public', {
+      headers: {
+        Authorization: `OAuth ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    
+    const keys=Object.keys(response.data.items)
+
+    const data:string[]=keys.map((key)=>{
+       const data=response.data.items[key]
+       console.log(data.path)
+       return data.path.split("/").length<=2?data.file:""
+    })
+    console.log(data)
+   
+    return data
+  } catch (error) {
+    console.error('Ошибка при получении данных:', error);
+    const data=[]
+    return 
+  }
+};
+
+
+const splitUrls = (urls: string[]) => {
+    let index = 0;
+    let result: string[][] = [];
+    while (index + 4 < urls.length) {
+        result.unshift(urls.slice(index, index + 4));
+        index += 4
+    }
+    return result;
+}
+
+
+
 import style from "../page.module.css"
 import NavigationBar from "../components/layout/navigation_bar"
 import FooterBar from "../components/layout/footer_bar"
 import PhotoGrid from "../components/photogrid/photo_grid"
 import ESlider from "../components/sliders/exhibition_slider/exhibition_slider"
-export default function PhotosPage() {
-    const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
+
+export default async function PhotosPage(){
+    
+    // const photos_example = [[1,2,3,4], [4,5,6,7], [8,9,10,10] ]
+    const fetch=await fetchData()||[""]
+    const photos = splitUrls(fetch);
     return (
         <div className={style.body}>
             <NavigationBar></NavigationBar>
-
             <div className={style.main}>
 
                 <div className={style.text_holder}>
@@ -18,29 +70,28 @@ export default function PhotosPage() {
                             Галерея
                         </h3>
                     </div>
+                    
                     <div className={style.col1}></div>
                 </div>
 
                 <div className={style.text_holder}>
                     <div className={style.col1}></div>
                     <div className={style.text_container}>
-                        <ESlider></ESlider>
+
+                        <ESlider urls={fetch}></ESlider>
                     </div>
                     <div className={style.col1}></div>
                 </div>
                 
                 
-                {photos_example.map(photo => 
+
+                {photos.map(photo => 
                 <div key={photo[0]} className={style.text_holder}>
                     <div className={style.col2}></div>
                         <PhotoGrid
-                        source1={`/photos/${photo[0]}.jpg`}
-                        source2={`/photos/${photo[1]}.jpg`}
-                        source3={`/photos/${photo[2]}.jpg`}
-                        source4={`/photos/${photo[3]}.jpg`}
+                        photos={photo}
                         >
-                        </PhotoGrid>
-
+                        </PhotoGrid>                    
                     <div className={style.col2}></div>
                 </div>
                 )}
@@ -49,6 +100,7 @@ export default function PhotosPage() {
             <div className={style.footer}>
                 <FooterBar></FooterBar>
             </div>
+            
         </div>
     )
 }
