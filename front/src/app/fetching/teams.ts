@@ -1,14 +1,14 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
-import * as secret from "../../../durable-cycle-408401-e343cb4938f2.json";
+import * as private_key from "../../../durable-cycle-408401-e343cb4938f2.json";
 import { GridingProps } from '../components/grid/grid';
 
 
 
 export async function getTeamsDataFromGoogleSheet(table_id: string): Promise<GridingProps[][]> {
   const serviceAccountAuth = new JWT({
-    email: secret.client_email,
-    key: secret.private_key,
+    email: private_key.client_email,
+    key: private_key.private_key,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   const arr = [0, 1, 2, 3, 4];

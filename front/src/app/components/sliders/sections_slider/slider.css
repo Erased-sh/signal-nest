@@ -21,12 +21,18 @@ swiper-container {
     background-position: center;
     background-size: cover;
     width: 320px;
-    height: 300px;
+    height: 400px;
   }
   swiper-slide img {
-    display: block;
-    /* height: 400px; */
+    /* display: block;
+    height: 400px;
     width: 100%;
     height: 100%;
+    object-fit: cover; */
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    max-width: 300px;
     object-fit: cover;
   }

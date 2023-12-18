@@ -11,7 +11,7 @@ interface ImageProps {
 export default function SliderCard({name, date, img, views}: ImageProps) {
     return (
     <div className={scoped.card}>
-        <img 
+        <img className={scoped.img}
         src={img}
         alt={date}    
         >

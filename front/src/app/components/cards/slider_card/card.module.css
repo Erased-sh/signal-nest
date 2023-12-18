@@ -27,8 +27,10 @@
 }
 
 .img {
-    width: 200;
-    height: 200;
+    /* width: 200; */
+    /* height: 200; */
+    max-width: 300px;
+    max-width: 300px;
     border-radius: 15px 15px 0 0;
     
 }
