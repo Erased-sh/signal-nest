@@ -1,6 +1,3 @@
-
-
-
 import style from "../page.module.css"
 import ColorTabs from "../components/tabs/tab"
 import NavigationBar from "../components/layout/navigation_bar"
@@ -27,6 +24,7 @@ export default async function ContactsPage(){
                     </div>
                     <div className={style.col1}></div>
                 </div>
+
 
                 {/* <p>Баскетбол</p> */}
             

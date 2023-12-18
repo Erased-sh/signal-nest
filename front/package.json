@@ -23,6 +23,7 @@
     "react-dom": "^18",
     "swiper": "^11.0.5",
     "yandex-disk": "^0.0.8"
+
   },
   "devDependencies": {
     "@types/node": "^20",

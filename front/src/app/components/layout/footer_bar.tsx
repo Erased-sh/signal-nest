@@ -14,7 +14,7 @@ export default function FooterBar() {
                     <h3 className={styles.text_inner}>vk.com/mssksvyazist</h3>
                 </div>
                 <div className={styles.item}>
-                    <h3 className={styles.text_inner}>https://mtuci.ru/</h3>
+                    <h3 className={styles.text_inner}><a className={styles.link} href="https://mtuci.ru/">https://mtuci.ru/</a></h3>
                 </div>
                 <div className={styles.item}>
                     <Image

@@ -49,6 +49,7 @@ export const Grid:FC<GridArray>=({title, fields})=>{
                                 Место рождения: {src.placeofbirthday} <br />
                                 Факультет: {src.faculty}<br />
                                 Год поступления: {src.faculty} <br />
+
                                 </h3>
                             </div>
                         <div className={style.col1}></div>

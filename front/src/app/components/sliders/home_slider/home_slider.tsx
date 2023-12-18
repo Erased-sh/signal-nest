@@ -1,6 +1,7 @@
 import SliderCard from "../../cards/slider_card/slider_card"
 import Script from "next/script"
 import "./slider.css"
+
 import { FC } from "react";
 import { UsersRowData } from "@/app/fetching/news";
 
@@ -19,6 +20,7 @@ export const HSlider:FC<sliderProps>=({fields})=> {
         space-between={30}
         slides-per-view={3}
         >
+
       {fields.map((fields)=>{
         return    (<swiper-slide className="sslide">
         <SliderCard

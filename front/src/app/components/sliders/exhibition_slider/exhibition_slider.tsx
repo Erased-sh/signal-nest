@@ -3,6 +3,7 @@ import Image from "next/image"
 import "./slider.css"
 
 
+
 interface EsliderData {
   urls: string[];
 }
@@ -23,6 +24,7 @@ export default function ESwiper({urls}: EsliderData) {
         coverflow-effect-slide-shadows={true}
         loop={true}
         >
+
           {urls.filter(el => el != "").map(photo => 
             <swiper-slide>
               {/* <Image src={`/photos/${photo}.jpg`} alt="" width={320} height={320}></Image> */}
